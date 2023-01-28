@@ -1,39 +1,59 @@
-#menu {
-    background-color: #FFEBC1;
-    /* min-height: 100vh; */
+.menu {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#contenedor-pedido {
+.contenedor-pedido {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
 }
 
-#opciones {
+.opciones-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-radius: 3px;
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.301);
+    margin-bottom: 30px;
+    height: 30px;
+}
+
+.opciones {
     display: flex;
     flex-direction: column;
     height: 100%;
     padding: 50px;
+    background-color: rgba(0, 0, 0, 0.473);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.301);
 }
 
-input {
+.opciones input {
     border: none;
     background-color: white;
-    height: 20px;
+    height: 30px;
     padding: 5px;
     box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.301);
 }
 
 .sabor {
     width: 200px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .cantidad {
     width: 50px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-right: 10px;
 }
 
 button {
@@ -49,8 +69,9 @@ button:hover {
 .boton-restar, .boton-sumar {
     width: 20px;
     height: 20px;
-    margin: 10px;
+    margin-left: 8px;
     box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.301);
+    border-radius: 5px;
 }
 
 #boton-agregar, #boton-finalizar {
@@ -59,10 +80,24 @@ button:hover {
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.301);
     align-self: center;
     margin: 30px;
+    border-radius: 5px;
+}
+
+#boton-agregar:hover {
+    background-color: red;
+}
+
+#boton-finalizar {
+    background-color: black;
+    color: white;
+}
+
+#boton-finalizar:hover {
+    background-color: red;
 }
 
 .contenedor-opcion {
-    margin: 10px;
+    margin: 15px;
 }
 
 #pedido {
@@ -73,10 +108,12 @@ button:hover {
     background-color: white;
     width: 350px;
     height: 350px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     padding: 50px;
     box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.301);
     font-size: 20px;
+    border-radius: 5px;
 }
 
 #carrito {
@@ -95,34 +132,125 @@ button:hover {
     text-align: end;
 }
 
-#pedido button {
-    background-color: black;
-    color: white;
-    height: 40px;
-    width: 150px;
-    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.301);
-    align-self: center;
-    margin: 30px;
-}
 
-#pedido button:hover {
-    background-color: white;
-    color: black;
-}
+
 
 #finalizar {
     display: flex;
     flex-direction: column;
 }
 
-#contenedor-pago {
+.contenedor-pago {
     background-color: white;
     color: black;
     width: 350px;
     padding: 50px;
     box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.301);
     text-align: center;
+    margin-top: 30px;
     margin-bottom: 50px;
     font-size: 25px;
+    border-radius: 5px;    
+}
+
+.modal-sweetalert button {
+    background-color: black;
+}
+
+
+
+
+.contenedor-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    width: 450px;
+    height: 520px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-modal-activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-encabezado {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-cerrar {
+    background-color: black;
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.modal-cerrar:hover {
+    background-color: red;
+    color: black;
+}
+
+.modal hr {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.modal-abrir {
+    height: 40px;
+    width: 150px;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.301);
+    align-self: center;
+    margin: 30px;
+    border-radius: 5px;
+}
+
+.modal-abrir:hover {
+    background-color: red;
+}
+
+.modal-botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    align-self: center;
+}
+
+.procesar-pedido, .vaciar-pedido {
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 150px;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.301);
+    margin: 30px;
+    border-radius: 5px;
+    display: block;
+    justify-self: center;
+    align-self: center;
+}
+
+.procesar-pedido:hover, .vaciar-pedido:hover {
+    background-color: red;
+    color: rgb(255, 255, 255);
 }
 
